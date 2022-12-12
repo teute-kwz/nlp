@@ -30,7 +30,7 @@ from preprocessing import translate
 # from dbgen import messages
 
 def classifier(message):
-    conn = sqlite3.connect('db0.sqlite3')
+    conn = sqlite3.connect('saved_model/db0.sqlite3')
     cursor = conn.execute('select * from models')
     name, pickled_clf = cursor.fetchone()
     transformer_model = pickle.loads(pickled_clf)
